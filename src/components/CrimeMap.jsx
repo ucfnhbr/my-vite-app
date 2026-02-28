@@ -55,7 +55,6 @@ const CrimeMap = ({ crimeData }) => {
     ]
   }, [boroughCrimeData, maxCount, minCount])
 
-
   useEffect(() => {
     if (map.current) return
 
