@@ -11,7 +11,8 @@ export const useCrimeData = () => {
   const [selectedMonths, setSelectedMonths] = useState([])
 
   useEffect(() => {
-    Papa.parse('/data/mps_borough_crime_24m.csv', {
+    console.log('BASE_URL:', import.meta.env.BASE_URL)
+Papa.parse(`${import.meta.env.BASE_URL}data/mps_borough_crime_24m.csv`, {
       download: true,
       header: true,
       complete: (results) => {
