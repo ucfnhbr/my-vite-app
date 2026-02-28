@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins: [
     react({
       babel: {
@@ -11,7 +11,5 @@ export default defineConfig(({ command }) => ({
     }),
     tailwindcss(),
   ],
-  base: command === 'build' ? '/my-vite-app/' : '/',  // 开发用 '/'，部署用 '/my-vite-app/'
-}))
-
-
+  base: '/my-vite-app/'
+})
