@@ -1,0 +1,92 @@
+/* src/components/IntroModal.css */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.modal-card {
+  background-color: #1e1e2e;
+  border-radius: 12px;
+  padding: 40px 48px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.modal-question {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.modal-question strong {
+  color: #ffffff;
+}
+
+.modal-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-list li {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.modal-list li strong {
+  color: #ffffff;
+}
+
+.modal-footer {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.modal-footer strong {
+  color: #ffffff;
+}
+
+.modal-btn {
+  background-color: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-btn:hover {
+  background-color: #c1121f;
+}

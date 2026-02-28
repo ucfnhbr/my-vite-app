@@ -1,0 +1,162 @@
+/* src/components/Sidebar.css */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: 8px 4px;
+}
+
+/* 标题 */
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111111;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e63946;
+}
+
+/* 统计数字区块 */
+.sidebar-stat {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px 16px;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e63946;
+}
+
+/* 分隔线 */
+.sidebar-divider {
+  height: 1px;
+  background-color: #eeeeee;
+  margin: 4px 0;
+}
+
+/* 每个区块 */
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* 犯罪类型按钮列表 */
+.crime-type-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.crime-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: #444444;
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.crime-type-btn:hover {
+  background-color: #fff5f5;
+  border-color: #e63946;
+  color: #111111;
+}
+
+.crime-type-btn.active {
+  background-color: #e63946;
+  border-color: #e63946;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.crime-type-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* 月份选择 */
+.month-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.month-label {
+  font-size: 0.8rem;
+  color: #888888;
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.month-select {
+  flex: 1;
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #111111;
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.month-select:hover,
+.month-select:focus {
+  border-color: #e63946;
+}
+
+/* 颜色图例 */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #fff5f5, #e63946);
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #888888;
+}
+

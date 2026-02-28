@@ -1,0 +1,3 @@
+const Charts = () => <div style={{color:'white'}}>Charts coming soon...
+</div>
+export default Charts

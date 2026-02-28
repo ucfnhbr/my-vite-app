@@ -1,0 +1,3 @@
+const InfoPanel = () => <div style={{color:'white'}}>InfoPanel coming soon...
+</div>
+export default InfoPanel
