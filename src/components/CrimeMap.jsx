@@ -92,7 +92,7 @@ const CrimeMap = ({ crimeData }) => {
     map.current.on('load', () => {
       map.current.addSource('boroughs', {
         type: 'geojson',
-        data: '/my-vite-app/data/uk_boroughs.geojson'
+        data: '/data/uk_boroughs.geojson'
       })
 
       // 填充图层
