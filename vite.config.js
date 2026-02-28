@@ -13,9 +13,7 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  // base: '/my-vite-app/'   // 本地开发时不用，有 GH Pages 发布时再打开
-  // 若需要，可根据环境条件设置：
-  // base: process.env.NODE_ENV === 'production' ? '/my-vite-app/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/my-vite-app/' : '/',
 })
 
 
