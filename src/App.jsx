@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState } from 'react'
 import { useCrimeData } from './hooks/useCrimeData'
 import CrimeMap from './components/CrimeMap'
@@ -30,7 +29,7 @@ export default function App() {
     <div className="app">
       {showIntro && <IntroModal onStart={() => setShowIntro(false)} />}
 
-      {/* Data Notes 弹窗 */}
+     
       {showNotes && (
         <div
           style={{
@@ -58,7 +57,7 @@ export default function App() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* 标题 */}
+           
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
@@ -82,7 +81,7 @@ export default function App() {
               >✕</button>
             </div>
 
-            {/* 内容 */}
+        
             {[
               {
                 title: 'Data Sources.',
