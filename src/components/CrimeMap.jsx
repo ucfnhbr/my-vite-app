@@ -1,4 +1,3 @@
-// src/components/CrimeMap.jsx
 import { useState, useEffect, useRef, useCallback } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
@@ -94,7 +93,6 @@ const CrimeMap = ({ crimeData }) => {
         data: `${import.meta.env.BASE_URL}data/uk_boroughs.geojson`
       })
 
-      // 填充图层
       map.current.addLayer({
         id: 'boroughs-fill',
         type: 'fill',
@@ -105,7 +103,6 @@ const CrimeMap = ({ crimeData }) => {
         }
       })
 
-      // 普通边界图层（细，深色）
       map.current.addLayer({
         id: 'boroughs-outline',
         type: 'line',
@@ -116,7 +113,6 @@ const CrimeMap = ({ crimeData }) => {
         }
       })
 
-      // 高亮边界图层（在最上面，不会被遮盖）
       map.current.addLayer({
         id: 'boroughs-highlight',
         type: 'line',
@@ -127,7 +123,6 @@ const CrimeMap = ({ crimeData }) => {
         }
       })
 
-      // 鼠标悬停事件
       map.current.on('mousemove', 'boroughs-fill', (e) => {
         if (e.features.length > 0) {
           map.current.getCanvas().style.cursor = 'pointer'
@@ -143,7 +138,6 @@ const CrimeMap = ({ crimeData }) => {
             setHoveredBorough({ name, data })
           }
 
-          // 高亮悬停和选中区域
           map.current.setPaintProperty('boroughs-highlight', 'line-color', [
             'match',
             ['get', 'ctyua15nm'],
@@ -154,12 +148,10 @@ const CrimeMap = ({ crimeData }) => {
         }
       })
 
-      // 鼠标离开事件
       map.current.on('mouseleave', 'boroughs-fill', () => {
         map.current.getCanvas().style.cursor = ''
         setHoveredBorough(null)
 
-        // 只保留选中区域高亮
         map.current.setPaintProperty('boroughs-highlight', 'line-color', [
           'match',
           ['get', 'ctyua15nm'],
@@ -168,7 +160,6 @@ const CrimeMap = ({ crimeData }) => {
         ])
       })
 
-      // 点击事件
       map.current.on('click', 'boroughs-fill', (e) => {
         const name = e.features[0].properties.ctyua15nm
         const data = boroughCrimeDataRef.current[name]
@@ -183,7 +174,6 @@ const CrimeMap = ({ crimeData }) => {
     }
   }, [])
 
-  // 更新颜色
   useEffect(() => {
     if (!map.current) return
 
@@ -203,7 +193,6 @@ const CrimeMap = ({ crimeData }) => {
     }
   }, [boroughCrimeData, getColorExpression])
 
-  // 更新选中区域高亮
   useEffect(() => {
     if (!map.current || !map.current.isStyleLoaded()) return
     if (!map.current.getLayer('boroughs-highlight')) return
@@ -220,7 +209,6 @@ const CrimeMap = ({ crimeData }) => {
     <div className="crime-map-container">
       <div ref={mapContainer} className="maplibre-map" />
 
-      {/* 悬浮折线图 */}
       {hoveredBorough && !clickedBorough && (
         hoveredBorough.noData
           ? (
@@ -254,7 +242,7 @@ const CrimeMap = ({ crimeData }) => {
           )
       )}
 
-      {/* 点击放大图表 */}
+
       {clickedBorough && (
         <ClickChart
           name={clickedBorough.name}
