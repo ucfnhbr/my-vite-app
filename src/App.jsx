@@ -68,7 +68,7 @@ export default function App() {
               paddingBottom: 12,
             }}>
               <h2 style={{ fontSize: '1rem', fontWeight: 700, color: '#111111' }}>
-                Data and Methodological Notes
+                Data and Methodology Description
               </h2>
               <button
                 onClick={() => setShowNotes(false)}
@@ -131,7 +131,7 @@ export default function App() {
               flexShrink: 0,
             }}
           >
-            Data and Methodological Notes
+            Data and Methodology Description
           </button>
         </div>
       </header>
